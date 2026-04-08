@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Weather Application using OpenWeatherMap API </title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Righteous&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="sky"></div>
+<canvas id="stars-canvas"></canvas>
+<div id="weather-anim"></div>
+
+<div class="container">
+  <header>
+    <div class="logo">🌤 WeatherVibe</div>
+    <p class="tagline">Real-time weather · Beautifully crafted</p>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="cityInput" placeholder="Search any city…" autocomplete="off"/>
+    <button id="searchBtn">🔍 Search</button>
+  </div>
+
+  <div class="error" id="errorMsg"></div>
+  <div class="loader" id="loader"><div class="pulse-ring"></div></div>
+
+  <div class="card" id="weatherCard">
+    <div class="hero">
+      <div class="city-col">
+        <h2 id="cityName">—</h2>
+        <div class="badge-row">
+          <div class="country-badge" id="countryName"></div>
+        </div>
+        <div class="dt" id="dateTime"></div>
+      </div>
+      <div class="temp-col">
+        <div class="big-temp" id="temperature">—<sup>°C</sup></div>
+        <div class="feels" id="feelsLike"></div>
+      </div>
+    </div>
+
+    <div class="condition-row">
+      <span class="big-emoji" id="weatherEmoji">🌡️</span>
+      <div>
+        <div class="cond-text" id="weatherCondition">—</div>
+        <div class="cond-sub" id="minMax"></div>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-icon-wrap">💧</div>
+        <div class="stat-val" id="humidity">—</div>
+        <div class="stat-lbl">Humidity</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon-wrap">🌬️</div>
+        <div class="stat-val" id="windSpeed">—</div>
+        <div class="stat-lbl">Wind</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon-wrap">👁️</div>
+        <div class="stat-val" id="visibility">—</div>
+        <div class="stat-lbl">Visibility</div>
+      </div>
+      <div class="stat">
+        <div class="stat-icon-wrap">🌡️</div>
+        <div class="stat-val" id="pressure">—</div>
+        <div class="stat-lbl">Pressure</div>
+      </div>
+    </div>
+
+    <div class="extra-row">
+      <div class="extra-item">
+        <div class="extra-dot">🌅</div>
+        <div>
+          <div class="extra-label">Sunrise</div>
+          <div class="extra-val" id="sunrise">—</div>
+        </div>
+      </div>
+      <div class="extra-item">
+        <div class="extra-dot">🌇</div>
+        <div>
+          <div class="extra-label">Sunset</div>
+          <div class="extra-val" id="sunset">—</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="forecast-section">
+      <div class="section-title">📅 5-Day Forecast</div>
+      <div class="forecast-scroll" id="forecastRow"></div>
+    </div>
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
